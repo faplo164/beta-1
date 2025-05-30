@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menú de Navegación</title>
+    <style>
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #003366;
+            padding: 10px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+        }
+
+        .imagen-centrada {
+            display: block;
+            margin: 0 auto;
+        }
+        table {
+  width: 50%; /* La tabla ocupa el 50% del ancho de la página */
+  border-collapse: collapse; /* Combina los bordes de las celdas */
+  margin: auto; /* Centra la tabla horizontalmente */
+}
+
+td {
+  border: 2px solid black; /* Borde para las celdas */
+  padding: 50px; /* Espacio alrededor del contenido de la celda */
+  text-align: center; /* Centra el contenido de la celda */
+}
+
+img {
+  max-width: 100%; /* La imagen no excede el ancho de la celda */
+  height: auto; /* Mantiene la proporción de la imagen */
+  display: block; /* Asegura que la imagen se muestre como bloque */
+  margin: auto; /* Centra la imagen horizontalmente */
+}
+
+p {
+  margin-top: 15px; /* Espacio entre la imagen y el texto */
+}
+.boton-comprar {
+  background-color: #4CAF50; /* Verde */
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+}
+ #botonInicio {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: white;
+  padding: 1em;
+  border-radius: 50%;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+    }
+#botonInicio:hover {
+ background-color: #444;
+    }
+</style>
+</head>
+<body>
+    <div class="contenedor-principal">
+    <!-- Todo tu contenido aquí -->
+  </div>
+
+
+    </style>
+
+</head>
+<body background="file:///C:/Users/SMK/Downloads/venta%20de%20reptiles.jpeg">
+
+    <div class="menu">
+  <a href="mascotin beta 4.html">Inicio</a>
+
+</div>
+   <table>
+  <tr>
+    <td><h1>iguana</h1></td>
+    <td><h1>dragon de comodo</h1></td>
+    <td><h1>camaleon</p></td>
+    <td><h1>gecko</p></td>
+  </tr>
+  <tr>
+    <td><img src="file:///C:/Users/SMK/Downloads/IGUANA.webp" alt="Imagen 1"><p>precio: $120USD</p><p>informacion:son reptiles herbívoros, principalmente arborícolas, que viven en América Central y del Sur, así como en algunas islas del Caribe. Son lagartos grandes, con colas largas y robustas, que les sirven para trepar y equilibrarse en los árboles.  </p><p>alimentacion:hojas verdes, aunque también consumen flores y frutas de forma moderada. En la naturaleza, su alimentación incluye hojas de árboles y enredaderas, así como algunas frutas y flores. </p><p>licencia:no require licencia</p>
+    <button class="boton-comprar">Comprar</button></td>
+    <td><img src="file:///C:/Users/SMK/Downloads/DRAGON%20DE%20COMODO.jpg" alt="Imagen 2"><p>precio: $1,782,129 USD.</p><p>informacion:es el lagarto más grande del mundo, conocido por su impresionante tamaño y su sistema de veneno.</p><p>alimentacion:principalmente carnívoros y se alimentan de carroña, pero también cazan presas vivas. Su dieta incluye una amplia variedad de animales, desde pequeños mamíferos y aves hasta grandes herbívoros como ciervos, búfalos de agua y jabalíes. También pueden consumir peces, cangrejos, huevos y, ocasionalmente, crías de su propia especie. </p><p>licencia:si require licencia(permiso de SEMARNAT)</p>
+    <button class="boton-comprar">Comprar</button></td>
+    <td><img src="file:///C:/Users/SMK/Downloads/CAMALEON.jpeg" alt="Imagen 3"><p>precio: $9,000MXM</p><p>informacion:son lagartos pequeños con la capacidad de cambiar de color para camuflarse, poseen ojos que se mueven independientemente y una lengua larga y pegajosa que usan para atrapar presas.</p><p>alimentacion:se les puede ofrecer una variedad de insectos vivos como grillos, saltamontes, cucarachas, gusanos de seda, etc. También pueden comer frutas y, en algunos casos, pequeñas cantidades de verduras.</p><p>licencia:no require licencia</p>
+    <button class="boton-comprar">Comprar</button></td>
+    <td><img src="file:///C:/Users/SMK/Downloads/GECKO.jpeg" alt="Imagen 8"><p>precio: $ 3,850.00 MXN</p><p>informacion:Los geckos son pequeños lagartos que pertenecen al infraorden Gekkota, conocidos por su habilidad para trepar y adherirse a superficies lisas.</p><p>alimentacion:grillos, gusanos de cera, gusanos de harina, moscas de la fruta, polillas y otros insectos pequeños.</p><p>licencia:no require licencia</p>
+    <button class="boton-comprar">Comprar</button></td>
+  </tr>
+  <tr>
+</table>
+
+<!-- Botón flotante -->
+<button id="botonInicio" title="Volver al inicio">↑</button>
+<script>
+  // Mostrar el botón cuando se hace scroll hacia abajo
+  window.onscroll = function () {
+    let button = document.getElementById('botonInicio');
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      button.style.display = "block";
+    } else {
+      button.style.display = "none";
+    }
+  };
+
+  // Función para ir al inicio de la página
+  document.getElementById("botonInicio").addEventListener("click", () => {
+    window.scrollTo({
+      top: 15,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</body>
+</html>

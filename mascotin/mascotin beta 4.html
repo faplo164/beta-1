@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascotitas - Tu Compañero Ideal te Espera</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        nav a:hover:before {
+            left: 100%;
+        }
+
+        nav a:hover {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            margin: 2rem 0;
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .slogan {
+            font-size: 1.5rem;
+            color: #f0f0f0;
+            margin-bottom: 2rem;
+            font-style: italic;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .section-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-card:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .section-card:hover:before {
+            opacity: 1;
+            animation: shimmer 1.5s ease-in-out;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .section-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .icon {
+            font-size: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .section-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .section-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .section-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .section-card li:hover {
+            background: rgba(102, 126, 234, 0.1);
+            padding-left: 1rem;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .team {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .team h3 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .member {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .member:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .member:hover:before {
+            left: 100%;
+        }
+
+        .member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .slogan {
+                font-size: 1.2rem;
+            }
+
+            .sections {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.1;
+        }
+
+        .floating-element:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .floating-element:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; }
+        .floating-element:nth-child(3) { top: 80%; left: 20%; animation-delay: 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-element">🐕</div>
+        <div class="floating-element">🐱</div>
+        <div class="floating-element">🐠</div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🐾 Mascotitas</div>
+                <nav>
+                    <ul>
+                        <li><a href="#Inicio">Inicio</a></li>
+                        <li><a href="caninos y felinos.html">Felinos y caninos</a></li>
+                        <li><a href="animales acuaticos.html">Acuáticos</a></li>
+                        <li><a href="reptiles.html">Reptiles</a></li>
+                        <li><a href="alimentos.html">Alimentos</a></li>
+                        <li><a href="contactos mascotin.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>¡Bienvenidos a Mascotitas!</h1>
+            <p class="slogan">"Aquí puedes encontrar tu compañero ideal"</p>
+            <p style="color: #f0f0f0; font-size: 1.1rem;">El lugar perfecto donde las familias encuentran a su nueva mascota y todo lo que necesitan para cuidarla con amor.</p>
+        </section>
+
+        <div class="sections">
+            <section id="felinos" class="section-card">
+                <h3><span class="icon">🐱</span> Felinos</h3>
+                <p>Descubre nuestra increíble selección de gatos, desde adorables gatitos hasta elegantes felinos adultos.</p>
+                <ul>
+                    <li>🐾 Gatos Persas - Elegantes y de pelo largo</li>
+                    <li>🐾 Gatos Siameses - Inteligentes y comunicativos</li>
+                    <li>🐾 Gatos Maine Coon - Grandes y cariñosos</li>
+                    <li>🐾 Gatos Británicos - Tranquilos y adorables</li>
+                    <li>🐾 Gatitos mestizos - Únicos y especiales</li>
+                </ul>
+            </section>
+
+            <section id="caninos" class="section-card">
+                <h3><span class="icon">🐕</span> Caninos</h3>
+                <p>Encuentra al compañero canino perfecto para tu familia, desde cachorros juguetones hasta perros adultos leales.</p>
+                <ul>
+                    <li>🐾 Golden Retriever - Familiares y gentiles</li>
+                    <li>🐾 Labrador - Activos y amigables</li>
+                    <li>🐾 Bulldog Francés - Pequeños y encantadores</li>
+                    <li>🐾 Pastor Alemán - Leales y protectores</li>
+                    <li>🐾 Chihuahua - Pequeños con gran personalidad</li>
+                </ul>
+            </section>
+
+            <section id="acuaticos" class="section-card">
+                <h3><span class="icon">🐠</span> Acuáticos</h3>
+                <p>Sumérgete en nuestro mundo acuático con peces tropicales, de agua fría y todo lo necesario para su cuidado.</p>
+                <ul>
+                    <li>🐾 Peces Tropicales - Coloridos y exóticos</li>
+                    <li>🐾 Goldfish - Clásicos y resistentes</li>
+                    <li>🐾 Peces Betta - Elegantes luchadores</li>
+                    <li>🐾 Acuarios completos - Todo incluido</li>
+                    <li>🐾 Plantas acuáticas - Naturales y artificiales</li>
+                </ul>
+            </section>
+
+            <section id="reptiles" class="section-card">
+                <h3><span class="icon">🦎</span> Reptiles</h3>
+                <p>Explora nuestro fascinante mundo de reptiles, desde iguanas hasta tortugas, perfectos para amantes de lo exótico.</p>
+                <ul>
+                    <li>🐾 Iguanas - Majestuosas y tranquilas</li>
+                    <li>🐾 Tortugas - Longevas y sabias</li>
+                    <li>🐾 Geckos - Pequeños y fascinantes</li>
+                    <li>🐾 Serpientes - Exóticas y únicas</li>
+                    <li>🐾 Terrarios completos - Hábitats perfectos</li>
+                </ul>
+            </section>
+
+            <section id="alimentos" class="section-card">
+                <h3><span class="icon">🥘</span> Alimentos</h3>
+                <p>Nutrición premium para todas las mascotas. Alimentos balanceados, treats y suplementos de las mejores marcas.</p>
+                <ul>
+                    <li>🐾 Alimento para perros - Todas las edades</li>
+                    <li>🐾 Alimento para gatos - Premium y económico</li>
+                    <li>🐾 Comida para peces - Tropical y agua fría</li>
+                    <li>🐾 Alimento para reptiles - Especializado</li>
+                    <li>🐾 Treats y premios - Para entrenar y consentir</li>
+                </ul>
+            </section>
+
+
+s        </div>
+
+        <section class="team">
+            <h3>🏆 Nuestro Equipo</h3>
+            <p style="margin-bottom: 1.5rem; color: #666;">Conoce a los integrantes apasionados que hacen posible Mascotitas:</p>
+            <div class="team-members">
+                <div class="member">Fabián Quevedo Rodríguez</div>
+                <div class="member">Pedro Ñáñez Martínez</div>
+                <div class="member">Diego Armando Cabrera Jiménez</div>
+                <div class="member">Marcelino Narciso Brayan</div>
+                <div class="member">Guillermo Hernández Militón</div>
+                <div class="member">Luis Manuel Aguilar Melitón</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mascotitas. Todos los derechos reservados. 🐾</p>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">Conectando familias con sus compañeros ideales desde el corazón.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animación suave al hacer scroll
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Efecto parallax sutil en el hero
+        window.addEventListener('scroll', () => {
+            const hero = document.querySelector('.hero');
+            const scrolled = window.pageYOffset;
+            hero.style.transform = `translateY(${scrolled * 0.1}px)`;
+        });
+
+        // Animación de aparición gradual para las tarjetas
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
